@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 
-# Env variables
+# Env variables/ run figaro install and edit ../config/application.yml
+# Check scaffold of file https://gist.github.com/breim/6f1770590a0c0dcf45d4
 gem 'figaro'
 
 # Bootstraping & Layouts
