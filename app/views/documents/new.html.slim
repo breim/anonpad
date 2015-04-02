@@ -1,0 +1,13 @@
+= render 'layouts/navbar'
+
+.container
+	center
+		h1 Dont be evil
+	.row
+		.col-sm-12
+			= form_for(@document) do |f|
+				.form-group
+					= f.text_area :body, class: 'form-control', rows: '15'
+				.pull-right
+					= f.submit 'Create Anon', class: 'btn btn-danger btn-lg' 
+			end 
