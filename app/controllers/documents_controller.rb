@@ -7,6 +7,7 @@ class DocumentsController < ApplicationController
 	end
 
 	def new
+		@documents = Document.all.count
 		@document = Document.new
 	end
 

@@ -1,13 +1,14 @@
 = render 'layouts/navbar'
-
 .container
 	center
-		h1 Dont be evil
+		h2 class='be-evil' Dont be evil
+		small class='be-evil' Total pastes #{@documents}
 	.row
 		.col-sm-12
 			= form_for(@document) do |f|
 				.form-group
-					= f.text_area :body, class: 'form-control', rows: '15'
-				.pull-right
-					= f.submit 'Create Anon', class: 'btn btn-danger btn-lg' 
+					.source-editor data-mode='markdown'
+						= f.text_area :body, class: 'form-control', rows: '18'
+				center
+					= f.submit 'Create AnonPad', class: 'btn btn-danger btn-lg' 
 			end 
