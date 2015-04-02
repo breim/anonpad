@@ -4,6 +4,6 @@ class Document < ActiveRecord::Base
   validates :body, presence: true
 
   def build_token
-    self.token = SecureRandom.hex(5)
+    self.token = SecureRandom.uuid
   end
 end
