@@ -1,11 +1,13 @@
 = render 'layouts/navbar'
 .container
-	.row
-		.col-sm-12
-			.form-group
-				h4 class='be-evil'
-					label Link to share
-				= text_field_tag 'link', nil,class: 'form-control', value: request.url
-				br
-			.source-editor data-mode='markdown'
-				textarea class='form-control' rows='24' = @document.body
+  .row
+    .col-sm-12
+      .form-group
+        h4 class='be-evil'
+          label Link to share
+        = text_field_tag 'link', nil,class: 'form-control', value: request.url
+        br
+      .body
+        == @document.highlight
+      /.source-editor data-mode='markdown'
+        textarea class='form-control' rows='24' = @document.body

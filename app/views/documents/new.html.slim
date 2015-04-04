@@ -1,14 +1,19 @@
 = render 'layouts/navbar'
 .container
-	center
-		h2 class='be-evil' Dont be evil
-		small class='be-evil' Total pastes #{@documents}
-	.row
-		.col-sm-12
-			= form_for(@document) do |f|
-				.form-group
-					.source-editor data-mode='markdown'
-						= f.text_area :body, class: 'form-control', rows: '18'
-				center
-					= f.submit 'Create AnonPad', class: 'btn btn-danger btn-lg' 
-			end 
+  center
+  .row
+    .col-sm-12
+      = form_for(@document) do |f|
+        .form-group
+          = render 'select_ace'
+        .form-group
+          .source-editor data-mode='markdown'
+            = f.text_area :body, class: 'form-control', rows: '18'
+            = f.hidden_field :editor_session, {value: 'markdown'}
+        center
+          = f.submit 'Create AnonPad', class: 'btn btn-danger btn-lg' 
+        br/
+        .row
+          .col-sm-6.col-sm-offset-3.text-center
+            .alert.alert-warning role="alert"
+              strong Dont be evil
