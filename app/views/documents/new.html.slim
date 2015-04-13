@@ -3,6 +3,15 @@
   center
   .row
     .col-sm-12
+      if notice
+      .alert.alert-warning.alert-dismissible role="alert" 
+        button.close data-dismiss="alert" type="button" 
+          span aria-hidden="true"  &times;
+          span.sr-only Close
+        h4 Ooooh !
+        ul
+          li = notice
+          |
       = form_for(@document) do |f|
         .form-group
           = render 'select_ace'
