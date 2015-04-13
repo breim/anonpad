@@ -5,6 +5,7 @@ class Document < ActiveRecord::Base
 
   validates :body, :editor_session, presence: true
 
+
   def build_token
     self.token = SecureRandom.uuid
   end

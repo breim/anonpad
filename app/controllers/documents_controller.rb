@@ -13,8 +13,7 @@ class DocumentsController < ApplicationController
 
   def create
     @document = Document.new(document_params)
-    @document.save
-    redirect_to(document_path(@document.token))
+    @document.save ? redirect_to(document_path(@document.token)) : redirect_to(documents_path, notice: 'You need to fill with something.')
   end
 
   def show
